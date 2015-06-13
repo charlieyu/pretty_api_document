@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<document>
+    <title>User Control</title>
+    <version>1.0</version>
+    <location>http://localhost:8080</location>
+    <api>
+        <name>login</name>
+        <method>POST</method>
+        <path>/user/login</path>
+        <param>
+            <name>account</name>
+            <located>content</located>
+            <description>patient ID card No.</description>
+            <required>yes</required>
+            <schema>String::String</schema>              
+        </param>
+        <param>
+            <name>password</name>
+            <located>content</located>
+            <description>the plaintext password(encrypt with rsa key)</description>
+            <required>yes</required>
+            <schema>String::String</schema>             
+        </param>
+        <response>
+            <http_code>200</http_code>
+            <content_type>application/json</content_type>
+            <content>{"status_code":"0","access_token":"f4352f6a-f940-11e4-9357-09c7c8949013","user_name":"我是谁","phone":"123456"}</content>
+        </response>
+        <response>
+            <http_code>400</http_code>
+            <content_type>application/json</content_type>
+            <content>{"status_code":"1","error_msg":"miss param password"}</content>
+        </response>
+    </api>
+    
+    <api>
+        <name>am-i-login</name>
+        <method>POST</method>
+        <path>/user/am-i-login</path>
+        <param>
+            <name>access_token</name>
+            <located>header</located>
+            <description>access_token server gived</description>
+            <required>yes</required>
+            <schema>String::String</schema>              
+        </param>
+        <response>
+            <http_code>200</http_code>
+            <content_type>application/json</content_type>
+            <content>{"status_code":"0","user_name":"我是谁","phone":"123456"}</content>
+        </response>
+        <response>
+            <http_code>401</http_code>
+            <content_type>application/json</content_type>
+            <content>{"status_code":"2","error_msg":"not login"}</content>
+        </response>
+    </api>
+</document>
