@@ -68,7 +68,7 @@ foreach ($xmlArray["api"] as $api){
     <div class="container" style="margin-top:120px;">
         <div class="row">
             <div class="col-md-2">
-                <ul class="nav nav-list affix">
+                <ul class="nav nav-list">
                     <li class="nav-header">MENU</li>
                     <?php 
                     foreach ($xmlArray["api"] as $api){
