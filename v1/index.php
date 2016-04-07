@@ -10,9 +10,11 @@ if (array_key_exists("name", $xmlArray["api"])){
 }
 
 foreach($xmlArray["api"] as $key => $api){
-    if (array_key_exists("name", $api["param"])){
-        $xmlArray["api"][$key]["param"] = [$api["param"]];
-    }
+	if (array_key_exists("param", $api)){
+	    if (array_key_exists("name", $api["param"])){
+	        $xmlArray["api"][$key]["param"] = [$api["param"]];
+	    }
+	}
 }
 
 foreach($xmlArray["api"] as $key => $api){
