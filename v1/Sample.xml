@@ -8,20 +8,10 @@
         <name>login</name>
         <method>POST</method>
         <path>/user/login</path>
-        <param>
-            <name>account</name>
-            <located>content</located>
-            <description>patient ID card No.</description>
-            <required>yes</required>
-            <schema>String::String</schema>              
-        </param>
-        <param>
-            <name>password</name>
-            <located>content</located>
-            <description>the plaintext password(encrypt with rsa key)</description>
-            <required>yes</required>
-            <schema>String::String</schema>             
-        </param>
+        <content-type>application/json</content-type>
+		<content>
+			RSA({"account":"yucanlin","password":"123456"})
+		</content>
         <response>
             <http_code>200</http_code>
             <content_type>application/json</content_type>

@@ -88,6 +88,16 @@ foreach ($xmlArray["api"] as $api){
                         <span style="font-size: 18px;"><?php echo $api["path"]?></span>
                     </div>
                     <div class="panel-body">
+                    	<?php 
+                    		if (array_key_exists("content-type", $api)){
+                    			echo "<h4>Content-Type: ".$api["content-type"]."</h4>";
+                    		}
+                    	?>
+                    	<?php if (array_key_exists("content", $api)) { ?>
+                    		<h4>Content:</h4>
+                    		<pre><?php echo trim($api["content"])?></pre>
+                    	<?php } ?>
+						<?php if (array_key_exists("param", $api)) { ?>
                         <h4>Param</h4>
                         <table class="table table-striped table-hover">
                             <tr>
@@ -107,6 +117,7 @@ foreach ($xmlArray["api"] as $api){
                             </tr>
                             <?php } ?>
                         </table>
+                        <?php } ?>
                         <h4>Response</h4>
                         <?php foreach ($api["response"] as $response) { ?>                  
                         <p class="<?php echo $bgClass[$response["http_code"]]?>">Http Code: <?php echo $response["http_code"]; ?></p>
