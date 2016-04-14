@@ -75,7 +75,7 @@ foreach ($xmlArray["api"] as $api){
                     <?php 
                     foreach ($xmlArray["api"] as $api){
                     ?>
-                    <li><a href="<?php echo "#".$api['name']?>"><?php echo $api['path']?></a></li>
+                    <li><a href="<?php echo "#".$api['name']?>"><?php echo $api['name']?></a></li>
                     <?php 
                     }
                     ?>
