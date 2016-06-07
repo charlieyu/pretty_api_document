@@ -91,8 +91,8 @@ foreach ($xmlArray["api"] as $api){
                     </div>
                     <div class="panel-body">
                     	<?php 
-                    		if (array_key_exists("content-type", $api)){
-                    			echo "<h4>Content-Type: ".$api["content-type"]."</h4>";
+                    		if (array_key_exists("content_type", $api)){
+                    			echo "<h4>Content-Type: ".$api["content_type"]."</h4>";
                     		}
                     	?>
                     	<?php if (array_key_exists("content", $api)) { ?>
