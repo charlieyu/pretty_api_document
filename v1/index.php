@@ -91,7 +91,7 @@ foreach ($xmlArray["api"] as $api){
                     </div>
                     <div class="panel-body">
                     	<?php
-                    	    if(array_key_exists("description", $$api)){
+                    	    if(array_key_exists("description", $api)){
                     	    	echo "<div class='bs-callout bs-callout-warning'>".$api["description"]."</div>";
                     	    }
                     	?>
